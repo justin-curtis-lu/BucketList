@@ -9,7 +9,11 @@ body {
 }
 
 .todo-completed{
-    color: black;
+    color: blue;
+}
+
+.todo-incomplete{
+    color: red;
 }
 
 h2{
@@ -18,4 +22,8 @@ h2{
 
 .small{
     font-size: 10pt;
+}
+
+.space{
+    margin-right: 1rem;
 }

@@ -4,7 +4,7 @@ from bson.objectid import ObjectId
 
 main = Blueprint('main', __name__)
 
-@main.route('/add_item', methods=['POST','GET'])
+@main.route('/add_item', methods=['POST'])
 def add_item():
     items_collection = mongo.db.items
     item = request.form['item']
@@ -37,7 +37,7 @@ def incomplete(oid):
 @main.route('/delete_completed')
 def delete_completed():
     items_collection = mongo.db.items
-    items_collection.delete_many({'complete' : True})
+    items_collection.delete_many({'complete': True})
     return redirect(url_for('main.index'))
 
 @main.route('/delete_all')

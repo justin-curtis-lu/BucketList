@@ -33,13 +33,13 @@
                     <div class="col-lg-12">
                         <div class="btn-toolbar">
                             <div class="btn-group">
-                                <a type="button" href="{{ url_for('main.delete_completed') }}" class="btn btn-warning">
-                                DELETE COMPLETED
+                                <a type="button" href="{{ url_for('main.delete_all') }}" class="btn btn-primary space">
+                                DELETE ALL ITEMS
                                 </a>
                             </div>
                              <div class="btn-group">
-                                <a type="button" href="{{ url_for('main.delete_all') }}" class="btn btn-warning">
-                                DELETE ALL ITEMS
+                                 <a type="button" href="{{ url_for('main.delete_completed') }}" class="btn btn-primary">
+                                DELETE COMPLETED
                                 </a>
                             </div>
                         </div>
@@ -53,7 +53,7 @@
                         <ul class="list-group t20">
                             {% for todo in items_collection %}
                                 <a href="{{ url_for('main.complete', oid=todo._id )}}">
-                                <li class="list-group-item">
+                                <li class="list-group-item todo-incomplete">
                                     {{ todo.text }}
                                 </li>
                                 </a>
@@ -62,7 +62,7 @@
                     </div>
                     <br>
                     <div class="col">
-                        <h2>Completed!</h2>
+                        <h2>Completed</h2>
                         <ul class="list-group t20">
                             {% for todo in done %}
                                 <a href="{{ url_for('main.incomplete', oid=todo._id )}}">
