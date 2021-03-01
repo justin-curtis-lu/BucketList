@@ -1,0 +1,21 @@
+body {
+  background: #fafafa;
+  color: black;
+  margin-top: 5rem;
+  font-size: 14pt;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  margin-bottom: 5rem;
+}
+
+.todo-completed{
+    color: black;
+}
+
+h2{
+    text-decoration: underline;
+}
+
+.small{
+    font-size: 10pt;
+}
