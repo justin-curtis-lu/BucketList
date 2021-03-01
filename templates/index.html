@@ -17,7 +17,7 @@
     <div class="container">
         <div class="row justify-content-md-center">
             <div class="col-lg-4 col-lg-offset-4" id="content">
-                <p class="small">* Click an item to mark it as complete*</p>
+                <p class="small">* Click an item to move it*</p>
                 <h1>MY BUCKET LIST</h1>
                 <form action="{{ url_for('main.add_item') }}" method="POST" role="form">
                     <div class="form-group">
@@ -47,27 +47,33 @@
                 </div>
 
                 <br>
-                <h2>On my List</h2>
-                <ul class="list-group t20">
-                    {% for todo in items_collection %}
-                        <a href="{{ url_for('main.complete', oid=todo._id )}}">
-                        <li class="list-group-item">
-                            {{ todo.text }}
-                        </li>
-                        </a>
-                    {% endfor %}
-                </ul>
-                <br>
-                <h2>Completed!</h2>
-                <ul class="list-group t20">
-                    {% for todo in done %}
-                        <a href="{{ url_for('main.incomplete', oid=todo._id )}}">
-                        <li class="list-group-item todo-completed">
-                            {{ todo.text }}
-                        </li>
-                        </a>
-                    {% endfor %}
-                </ul>
+                <div class="row">
+                    <div class="col">
+                        <h2>On my List</h2>
+                        <ul class="list-group t20">
+                            {% for todo in items_collection %}
+                                <a href="{{ url_for('main.complete', oid=todo._id )}}">
+                                <li class="list-group-item">
+                                    {{ todo.text }}
+                                </li>
+                                </a>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <br>
+                    <div class="col">
+                        <h2>Completed!</h2>
+                        <ul class="list-group t20">
+                            {% for todo in done %}
+                                <a href="{{ url_for('main.incomplete', oid=todo._id )}}">
+                                <li class="list-group-item todo-completed">
+                                    {{ todo.text }}
+                                </li>
+                                </a>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
